@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# additions: rows 46-47
-
 """
 Helper functions for normalizing and working with genomic variants
 """
@@ -43,8 +41,6 @@ def trim_variant_fields(location, ref, alt):
 
     Returns adjusted triplet (location, ref, alt)
     """
-    if ref == alt:
-        return location, ref, alt
     if len(alt) > 0 and ref.startswith(alt):
         # if alt is a prefix of the ref sequence then we actually have a
         # deletion like:

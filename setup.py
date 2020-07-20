@@ -56,7 +56,7 @@ if __name__ == '__main__':
         url="https://github.com/hammerlab/isovar",
         license="http://www.apache.org/licenses/LICENSE-2.0.html",
         classifiers=[
-            'Development Status :: 4 - Beta',
+            'Development Status :: 3 - Alpha',
             'Environment :: Console',
             'Operating System :: OS Independent',
             'Intended Audience :: Science/Research',
@@ -69,7 +69,7 @@ if __name__ == '__main__':
             'pysam==0.9.0',
             'pandas',
             'varcode>=0.5.9',
-            'pyensembl>=1.5.0',
+            'pyensembl>=1.0.3',
         ],
         long_description=readme_restructured,
         packages=find_packages(),

@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#additions: changing ref-ref to -ref-alt in order to predict transcripts via Varcode
 from __future__ import print_function, division, absolute_import
 
 from varcode import EffectCollection
@@ -98,7 +97,6 @@ def reference_transcripts_for_variant(
     variant and for which it has a predictable effect on the amino acid
     sequence of the protein.
     """
-    variant.alt = variant.old_alt
     predicted_effects = predicted_effects_for_variant(
         variant=variant,
         transcript_id_whitelist=transcript_id_whitelist,
