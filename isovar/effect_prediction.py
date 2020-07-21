@@ -97,6 +97,7 @@ def reference_transcripts_for_variant(
     variant and for which it has a predictable effect on the amino acid
     sequence of the protein.
     """
+    variant.alt = variant.old_alt
     predicted_effects = predicted_effects_for_variant(
         variant=variant,
         transcript_id_whitelist=transcript_id_whitelist,
