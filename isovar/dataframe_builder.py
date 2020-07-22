@@ -16,7 +16,7 @@ from __future__ import print_function, division, absolute_import
 from collections import OrderedDict
 from six import integer_types, text_type, binary_type
 
-from varcode import Variant
+from varcode import Variant, Variant_ref
 import pandas as pd
 
 VALID_ELEMENT_TYPES = integer_types + (text_type, binary_type, float, bool)
@@ -130,11 +130,18 @@ class DataFrameBuilder(object):
 
     def add(self, variant, element):
         if self.variant_columns:
-            assert isinstance(variant, Variant)
-            self.columns_dict["chr"].append(variant.contig)
-            self.columns_dict["pos"].append(variant.original_start)
-            self.columns_dict["ref"].append(variant.original_ref)
-            self.columns_dict["alt"].append(variant.original_alt)
+            try:
+                assert isinstance(variant, Variant)
+                self.columns_dict["chr"].append(variant.contig)
+                self.columns_dict["pos"].append(variant.original_start)
+                self.columns_dict["ref"].append(variant.original_ref)
+                self.columns_dict["alt"].append(variant.original_alt)
+            except AssertionError:
+                assert isinstance(variant, Variant_ref)
+                self.columns_dict["chr"].append(variant.contig)
+                self.columns_dict["pos"].append(variant.original_start)
+                self.columns_dict["ref"].append(variant.original_ref)
+                self.columns_dict["alt"].append(variant.original_alt)
         else:
             assert variant is None
 
