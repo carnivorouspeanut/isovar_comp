@@ -66,9 +66,9 @@ if __name__ == '__main__':
         ],
         install_requires=[
             'six',
-            'pysam==0.9.0',
+            'pysam>=0.15.2,<=0.16.0',
             'pandas',
-            'varcode>=0.5.9',
+            'varcode @ git+https://github.com/carnivorouspeanut/varcode_comp.git@my_improvements#egg=varcode',
             'pyensembl>=1.0.3',
         ],
         long_description=readme_restructured,
