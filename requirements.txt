@@ -1,7 +1,0 @@
-six>=1.9.0
-pylint>=1.4.4
-pyensembl>=1.5.0
-git+https://github.com/carnivorouspeanut/varcode_comp.git@my_improvements 
-pandas>=0.23.0
-pysam==0.9.0
-nose>=1.3.3
